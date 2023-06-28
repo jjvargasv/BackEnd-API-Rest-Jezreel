@@ -1,0 +1,18 @@
+{
+  "name": "finalbakent",
+  "version": "1.0.0",
+  "description": "BackEnd: API para Jezreel ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "typescript",
+    "express",
+    "mongoose",
+    "multer"
+  ],
+  "author": "jhon jairo vargas vargas <vargas.jhon@gmail.com>",
+  "license": "ISC"
+}
