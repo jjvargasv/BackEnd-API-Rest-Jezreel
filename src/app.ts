@@ -5,7 +5,7 @@ const app = express();
 
 /** Routing: Enrutamiento */
 // http:localhost:3000/ (EndPoint)
-app.get( '/', (req:Request, res:Response) => { 
+app.get( '/api', (req:Request, res:Response) => { 
 
     const message : string = 'Bienvenido a la API de Jezreel';
 
