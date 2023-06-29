@@ -1,5 +1,5 @@
 import  express, { Request, Response } from "express";
-
+import routmain from "./routes";
 
 const app = express();
 
@@ -21,6 +21,9 @@ app.get( '/home', (req:Request, res:Response) => {
     console.log(namePage);
     res.send(`<h1>${ namePage} </h1>`);
 });
+
+//Middleware
+app.use('/',routmain);
 
 app.listen(3000,()=>{
     console.log('servidor lanzado en el puerto 3000');
