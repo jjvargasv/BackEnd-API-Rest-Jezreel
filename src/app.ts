@@ -1,18 +1,21 @@
-import  express  from "express";
+import  express, { Request, Response } from "express";
+
 
 const app = express();
 
 /** Routing: Enrutamiento */
 // http:localhost:3000/ (EndPoint)
-app.get( '/', (req, res) => { 
+app.get( '/', (req:Request, res:Response) => { 
 
-    const message = 'Bienvenido a la API de Jezreel';
+    const message : string = 'Bienvenido a la API de Jezreel';
+
+   
     console.log(message);
     res.send(`<h1>${ message} </h1>`);
 });
 
 // http:localhost:3000/home   (EndPoint)
-app.get( '/home', (req, res) => { 
+app.get( '/home', (req:Request, res:Response) => { 
 
     const namePage = 'home Jezreel';
     console.log(namePage);
