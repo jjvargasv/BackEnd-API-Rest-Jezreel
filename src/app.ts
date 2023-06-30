@@ -1,7 +1,7 @@
 import 'dotenv/config';
 import  express, { Request, Response } from "express";
 import routmain from "./routes";
-
+import db from "./config/mongo.config"
 
 const app = express();
 const PORT = process.env.PORT ||3001;
@@ -16,6 +16,13 @@ app.get( '/api', (req:Request, res:Response) => {
     console.log(message);
     res.send(`<h1>${ message} </h1>`);
 });
+
+/* db()
+    .then( () => console.log(' MongoDB se conecto correctamente'))
+    .catch( () => console.log(' MongoDB tiene probemas de coneccion')); */
+
+
+
 
 // http:localhost:3000/home   (EndPoint)
 app.get( '/home', (req:Request, res:Response) => { 
