@@ -1,14 +1,11 @@
 /* archivo central de enrutamieno */
 import { Router, Request, Response } from "express";
+import { getProducts } from "../controllers/product.controller";
+
 
 const router =Router();
 
-router.get('/', (req:Request, res:Response) =>{
-    const msg ='products';
+router.get('/', getProducts);
 
-    console.log(msg);
-    res.send(`<h1>${msg }</h1>`)
-    
-});
 
 export default router;

@@ -1,6 +1,6 @@
 import 'dotenv/config';
 import  express, { Request, Response } from "express";
-import routmain from "./routes";
+import routmain from "./routes/index.route";
 import db from "./config/mongo.config"
 
 const app = express();
@@ -8,7 +8,7 @@ const PORT = process.env.PORT ||3001;
 
 /** Routing: Enrutamiento */
 // http:localhost:3000/ (EndPoint)
-app.get( '/api', (req:Request, res:Response) => { 
+app.get( '/', (req:Request, res:Response) => { 
 
     const message : string = 'Bienvenido a la API de Jezreel';
 
@@ -33,7 +33,7 @@ app.get( '/home', (req:Request, res:Response) => {
 });
 
 //Middleware
-app.use('/',routmain);
+app.use('/api',routmain);
 
 app.listen(PORT,()=>{
     console.log(`servidor en http://localhost:${ PORT}`);
