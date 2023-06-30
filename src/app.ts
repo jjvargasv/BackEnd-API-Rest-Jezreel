@@ -1,7 +1,10 @@
+import 'dotenv/config';
 import  express, { Request, Response } from "express";
 import routmain from "./routes";
 
+
 const app = express();
+const PORT = process.env.PORT ||3001;
 
 /** Routing: Enrutamiento */
 // http:localhost:3000/ (EndPoint)
@@ -25,6 +28,6 @@ app.get( '/home', (req:Request, res:Response) => {
 //Middleware
 app.use('/',routmain);
 
-app.listen(3000,()=>{
-    console.log('servidor lanzado en el puerto 3000');
+app.listen(PORT,()=>{
+    console.log(`servidor en http://localhost:${ PORT}`);
 });
