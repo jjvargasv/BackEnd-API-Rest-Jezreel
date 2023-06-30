@@ -17,9 +17,6 @@ app.get( '/', (req:Request, res:Response) => {
     res.send(`<h1>${ message} </h1>`);
 });
 
-/* db()
-    .then( () => console.log(' MongoDB se conecto correctamente'))
-    .catch( () => console.log(' MongoDB tiene probemas de coneccion')); */
 
 
 
@@ -34,6 +31,10 @@ app.get( '/home', (req:Request, res:Response) => {
 
 //Middleware
 app.use('/api',routmain);
+
+db()
+    .then( () => console.log(' MongoDB se conecto correctamente'))
+    .catch( () => console.log(' MongoDB tiene probemas de coneccion'));
 
 app.listen(PORT,()=>{
     console.log(`servidor en http://localhost:${ PORT}`);
