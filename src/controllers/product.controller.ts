@@ -2,22 +2,26 @@
 import { Request, Response } from "express";
 
 
-function getProducts(rep:Request, res:Response) {
+async function getProducts(rep:Request, res:Response) {
     console.log('Obtengo todos los productos');
-    
+    res.send('Obtengo todos los productos');
 }
-function getProduct(rep:Request, res:Response) {
+async function getProduct(rep:Request, res:Response) {
     console.log('Obtengo un productos por ID');
+    res.send('Obtengo un productos por ID');
 }
-function createProducts(rep:Request, res:Response) {
+async function createProducts(rep:Request, res:Response) {
     console.log('Crea productos');
+    res.send('Crea productos');
 }
-function updateProducts(rep:Request, res:Response) {
+async function updateProducts(rep:Request, res:Response) {
     console.log('actualiza productos');
+    res.send('actualiza productos');
 }
 
-function deleteProducts(rep:Request, res:Response) {
+async function deleteProducts(rep:Request, res:Response) {
     console.log('Eliminia productos');
+    res.send('Eliminia productos');
 }
 
 export {
