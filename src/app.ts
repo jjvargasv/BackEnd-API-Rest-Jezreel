@@ -29,6 +29,9 @@ app.get( '/home', (req:Request, res:Response) => {
     res.send(`<h1>${ namePage} </h1>`);
 });
 
+
+app.use(express.json() );
+
 //Middleware
 app.use('/api',routmain);
 

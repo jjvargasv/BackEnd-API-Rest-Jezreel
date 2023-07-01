@@ -28,6 +28,6 @@ import { Schema, model } from "mongoose";
     );
 
     // define el modelo a partir de la estructura requerida por monguse
-    const productModel = model('products',productSchema);
+    const ProductModel = model('products',productSchema);
 
-    export default productModel;
+    export default ProductModel;
