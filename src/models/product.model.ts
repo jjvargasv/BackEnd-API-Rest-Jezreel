@@ -3,20 +3,47 @@ import { Schema, model } from "mongoose";
 
  const productSchema= new Schema(
     // objeto princioal definira los atributos del modelo 
-    {
+    {   
+        idProducto: {
+            type: Number,
+            required: true,
+        },
         name: {
             type :String,
-            required:true
+            required:true,
         },
 
         price: {
             type: Number,
-            required: false
+            required: false,
         },
 
         description:{
-            type: String
+            type: String,
+            required: true,
         },
+        inventario:{
+            type: Number,
+            required: false,
+        },
+        image:{
+            type: String,
+            required: false,
+        },
+        category:{
+            type: String,
+            required: true,
+        },
+        marca:{
+            type: String,
+            required: true,
+        },
+        ranking:{
+            type: Number,
+            default: 0,
+
+        },
+
     }, 
 
 
