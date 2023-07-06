@@ -1,11 +1,21 @@
 
 import { Request, Response } from "express";
-import {insertProduct} from "../services/product.services";
+import {getAllProducts, insertProduct} from "../services/product.services";
 
 
 async function getProducts(req:Request, res:Response) {
-    console.log('Obtengo todos los productos');
-    res.send('Obtengo todos los productos');
+   try{
+        const response =await getAllProducts();
+        console.log(response);
+        res.json(response);
+    } 
+    catch (error) {
+        console.log('Error al insertar el producto');
+        res.json({
+            msg: 'ERROR_PRODUCT_LIST'
+        });
+        
+    }
 }
 async function getProduct(req:Request, res:Response) {
     console.log('Obtengo un productos por ID');
