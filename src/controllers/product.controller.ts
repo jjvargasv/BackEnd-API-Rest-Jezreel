@@ -1,6 +1,6 @@
 
 import { Request, Response } from "express";
-import {deleteProductById, getAllProducts, getProductById, insertProduct} from "../services/product.services";
+import {deleteProductById, getAllProducts, getProductById, insertProduct, updateProductById} from "../services/product.services";
 
 
 async function getProducts(req:Request, res:Response) {
@@ -50,13 +50,23 @@ async function createProducts(req:Request, res:Response) {
         });
         
     }
-    
-    
-
 }
 async function updateProducts(req:Request, res:Response) {
-    console.log('actualiza productos');
-    res.send('actualiza productos');
+    const { params: { id }} = req;
+    const {body} = req;
+    try {
+        const response = await updateProductById(id, req.body);
+        console.log(response);
+        res.json(response);
+    } 
+    catch (error) {
+        console.log('Error a la actualizacion del producto el producto');
+        res.json({
+            msg: 'ERROR_INSERT_PRODUCT'
+        });
+        
+    }
+
 }
 
 async function deleteProducts(req:Request, res:Response) {

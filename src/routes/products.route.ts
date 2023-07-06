@@ -8,7 +8,7 @@ const router =Router();
 router.get('/', getProducts);
 router.get( '/:id',getProduct);
 router.post( '/', createProducts);
-router.put( '/', updateProducts);
+router.put( '/:id', updateProducts);
 router.delete( '/:id', deleteProducts);
 
 export default router;

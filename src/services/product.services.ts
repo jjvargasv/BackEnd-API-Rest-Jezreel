@@ -15,12 +15,24 @@ const getProductById = async(productId:string)=> {
     return await ProductModel.findOne({_id: productId});
 } 
 
+const updateProductById = async (productId:string, updateProduct:product) => {
+    return await ProductModel.findOneAndUpdate(
+        {_id: productId },
+        updateProduct,
+        {new: true}
+        
+    );
+
+}
 const deleteProductById = async (productId:string)=> {
     return await ProductModel.findOneAndRemove({_id: productId});
 }
+
 export { 
     insertProduct,
     getAllProducts,
     getProductById,
+    updateProductById,
     deleteProductById
+    
  }
