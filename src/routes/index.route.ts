@@ -1,12 +1,14 @@
-/* archivo central de enrutamieno */
+/** Archivo central de enrutamiento */
 import { Router, Request, Response } from "express";
-import routerUsers from "./users.route";
-import routerProducts from "./products.route";
-import routerAuth from "./auth.route";
-const router =Router();
+import routeUsers from "./users.route";
+import routeProducts from "./products.route";
+import routeAuth from "./auth.route";
 
-router.use('/users',routerUsers);
-router.use("/products",routerProducts);
-router.use("/auth",routerAuth);
+const router = Router();
+
+/** Implementando Middlewares a Express */
+router.use( '/users', routeUsers );         // http://localhost:3000/api/users
+router.use( '/products', routeProducts );   // http://localhost:3000/api/products
+router.use( '/auth', routeAuth );           // http://localhost:3000/api/auth
 
 export default router;

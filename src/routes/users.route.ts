@@ -1,14 +1,14 @@
-/* archivo de rutas */
 import { Router, Request, Response } from "express";
 
-const router =Router();
+const router = Router();
+/** Archivo de rutas para el endpoint de 'users' */
+// http://localhost:3000/api/users/
+router.get( '/', ( req: Request, res: Response ) => {
+    const msg = 'Users';
 
-router.get('/', (req:Request, res:Response) =>{
-    const msg ='users';
-
-    console.log(msg);
-    res.send(`<h1>${msg }</h1>`)
-    
+    console.log( msg );
+    res.send( `<h1>${ msg }</h1>`)
 });
+
 
 export default router;

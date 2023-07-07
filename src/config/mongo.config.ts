@@ -1,10 +1,10 @@
-import {connect} from 'mongoose';
+import { connect } from "mongoose";
 
-
-
-async function  dbconnect() : Promise<void> {
-    const DB_URI = `${process.env.BD_URI}`;
-    await connect(DB_URI);
+// Configuracion para la conexion con MongoDB
+async function dbConnect() : Promise<void> {
+    const DB_URI = `${ process.env.DB_URI }`;     // <string> 
+    await connect( DB_URI );
 }
 
-export default dbconnect
+
+export default dbConnect;

@@ -1,17 +1,38 @@
 import { Request, Response } from "express";
+import { registerNewUser } from "../services/auth.service";
+import { loginUser } from "../services/auth.service";
 
-const register = ()=>{
-    const register = (req: Request, res: Response) =>{
-        console.log('registar usuarios');
-        res.send('registar usuarios');
+const register = async ( req: Request, res: Response ) => {
+    const user = req.body;
+    // const { body } = req;
+
+    try {
+        const response = await registerNewUser( user );
+
+        res.json( response );
+    } catch (error) {
+        console.log( `Error en el registro del usuario` );
+        res.json({
+            msg: 'ERROR_REGISTER_USER'
+        });
     }
-}
-
-const login = ()=>{
     
 }
 
-export {
-    register,
-    login
+const login = async ( req: Request, res: Response ) => {
+    const user = req.body;
+   try {
+    const response = await loginUser( user);
+
+   } catch (error) {
+       console.log( `Error en el login del usuario` );
+       res.json({
+           msg: 'ERROR_LOGIN_USER'
+       });
+   }
 }
+
+export {
+    register, 
+    login
+};

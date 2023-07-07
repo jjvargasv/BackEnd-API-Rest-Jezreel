@@ -1,38 +1,37 @@
-import { product } from "../interfaces/product.interface";
+import { Product} from "../interfaces/product.interface";
 import ProductModel from "../models/product.model";
 
-const insertProduct = async(product: product)=> {
-    const response = await ProductModel.create(product);
+const insertProduct = async ( product: Product ) => {
+    const response = await ProductModel.create( product );
 
     return response;
 }
 
-const getAllProducts = async() =>{
-      return await  ProductModel.find({});
+const getAllProducts = async () => {
+    return await ProductModel.find({});
 }
 
-const getProductById = async(productId:string)=> {
-    return await ProductModel.findOne({_id: productId});
-} 
+const getProductById = async ( productId: string ) => {
+    return await ProductModel.findOne({ _id: productId });
+}
 
-const updateProductById = async (productId:string, updateProduct:product) => {
-    return await ProductModel.findOneAndUpdate(
-        {_id: productId },
-        updateProduct,
-        {new: true}
-        
+const removeProductById = async ( productId: string ) => {
+    return await ProductModel.findOneAndRemove({ _id: productId });
+}
+
+const updateProductById = async ( productId: string, updateProduct: Product ) => {
+    return await ProductModel.findOneAndUpdate( 
+        { _id: productId },     // Id del documento que deseamos actualizar
+        updateProduct,          // El documento por el que vamos a actualizar 
+        { new: true }           // Configuracion para el comando Update
     );
-
-}
-const deleteProductById = async (productId:string)=> {
-    return await ProductModel.findOneAndRemove({_id: productId});
 }
 
-export { 
+
+export {
     insertProduct,
     getAllProducts,
     getProductById,
-    updateProductById,
-    deleteProductById
-    
- }
+    removeProductById,
+    updateProductById
+}
