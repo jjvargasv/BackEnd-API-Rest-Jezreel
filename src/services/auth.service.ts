@@ -24,8 +24,8 @@ const loginUser = async ( user: Auth ) => {
     if(! userFound){
         return 'USER_NOT_FOUND';
     }
-    console.log(userFound);
-    return 0;
+    
+    return userFound;
     // verificando si la contraseña es correcta
 
     

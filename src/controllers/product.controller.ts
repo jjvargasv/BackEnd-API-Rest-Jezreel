@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { getAllProducts, getProductById, insertProduct, removeProductById, updateProductById } from "../services/product.service";
+import { getAllProducts, getProductById, insertProduct, removeProductById, updateProductById } from "../services/product.services";
 
 
 async function getProducts( req: Request, res: Response ) {
@@ -26,8 +26,8 @@ async function getProduct ( req: Request, res: Response ) {
     try {
         const response = await getProductById( productId );
 
-        console.log( res )
-        res.json( response );
+        console.log( response )
+        
 
     } catch ( error ) {
         console.log( `Error en la extracion del producto con id: ${ productId }` );
