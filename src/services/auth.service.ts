@@ -46,7 +46,7 @@ const loginUser = async ( user: Auth ) => {
 
     const JWT_SECRET = process.env.JWT_SECRET_KEY || '0tr4-cl4v3-s3cr3ta';
     // 3. crear el token
-    const token = await sign(
+    const token = sign(
     // payload: carga util
     {
         userId: userFound._id,
@@ -62,12 +62,10 @@ const loginUser = async ( user: Auth ) => {
 );
 
 return {
-    user: userFound,
-    token,
+      token,
 }
 
-return userFound;
-    
+
 }
 
 export {

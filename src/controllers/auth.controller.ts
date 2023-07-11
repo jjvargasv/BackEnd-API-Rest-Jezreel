@@ -23,6 +23,9 @@ const login = async ( req: Request, res: Response ) => {
     const user = req.body;
    try {
     const response = await loginUser( user);
+    console.log(response);
+    res.json({response});
+    
 
    } catch (error) {
        console.log( `Error en el login del usuario` );

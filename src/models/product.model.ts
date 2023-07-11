@@ -20,7 +20,7 @@ import { Schema, model } from "mongoose";
 
         description:{
             type: String,
-            required: true,
+            required: false,
         },
         inventario:{
             type: Number,
@@ -32,11 +32,11 @@ import { Schema, model } from "mongoose";
         },
         category:{
             type: String,
-            required: true,
+            required: false,
         },
         marca:{
             type: String,
-            required: true,
+            required: false,
         },
         ranking:{
             type: Number,
