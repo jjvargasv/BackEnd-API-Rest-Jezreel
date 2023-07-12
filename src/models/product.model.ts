@@ -38,6 +38,10 @@ import { Schema, model } from "mongoose";
             type: String,
             required: false,
         },
+        userId:{
+            type: String,
+            required: true,
+        },
         ranking:{
             type: Number,
             default: 0,
